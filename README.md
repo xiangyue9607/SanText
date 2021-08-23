@@ -12,23 +12,25 @@ Please kindly cite the paper if you use the code or any resources in this repo:
 ```
 **The first two authors contributed equally to this work.**
 
-##Introduction
+## Introduction
 The privacy issue is often overlooked in NLP. 
 We address privacy from the root: 
 directly producing sanitized text documents based on differential privacy.
 We further propose sanitization-aware pretraining and finetuning to adapt the currently dominating LM (e.g., BERT) over sanitized texts. It “prepares” the model to work with sanitized texts, which leads to an increase in accuracy while additionally ensuring privacy.
 
-![img.png](img.png)
+<p align="center">
+<img src="img.png" alt="SanText" width="500"/>
+</p>
 
 
-##Setup Environment
-###Install required packages
+## Setup Environment
+### Install required packages
 ```shell
 git clone https://github.com/xiangyue9607/SanText.git
 cd SanText
 pip install -r requirements.txt
 ```
-###Download the experimental data
+### Download the experimental data
 We used three datasets in our paper: SST2, QNLI and CliniSTS. SST2 and QNLI 
 are from [GLUE benchmark](https://gluebenchmark.com/tasks) and they are public available.
 CliniSTS is not public available. Contact their [paper](https://arxiv.org/abs/1808.09397) authors for more details to access the data.
@@ -38,7 +40,7 @@ CliniSTS is not public available. Contact their [paper](https://arxiv.org/abs/18
 
 
 
-##Sanitize the text inputs
+## Sanitize the text inputs
 We propose two sanitized mechanisms based on differential privacy: **SanText** and **SanText+**.
 Here we show some examples for running these algorithms:
 ```shell
@@ -79,7 +81,7 @@ Here we show some examples for running these algorithms:
 ```
 
 
-##Finetune sanitization-aware BERT models
+## Finetune sanitization-aware BERT models
 We then show examples how to finetune BERT models to do NLP tasks based on these sanitized texts in the previous step.
   
 ```shell
@@ -118,7 +120,7 @@ python run_glue.py \
   --save_steps 2000
 ```
 
-##Pretrain sanitization-aware BERT models (optional)
+## Pretrain sanitization-aware BERT models (optional)
 We finally show how to pretrain sanitization-aware BERT models based on the public corpus such as Wikipedia.
 Note that this step training is often time-consuming and costly. We denote this step as optional, however,
 sanitization-aware pretrain can improve the model's performance in the downstream tasks while not hurting the privacy.
