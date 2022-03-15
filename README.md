@@ -1,5 +1,5 @@
 # SanText
-Code for Findings of ACL-IJCNLP 2021 **"Differential Privacy for Text Analytics via Natural Text Sanitization"**
+Code for Findings of ACL-IJCNLP 2021 **"[Differential Privacy for Text Analytics via Natural Text Sanitization](https://arxiv.org/pdf/2106.01221.pdf)"**
 
 Please kindly cite the paper if you use the code or any resources in this repo:
 ```bib
